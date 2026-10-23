@@ -43,17 +43,3 @@ const Matrix2D COUNTER_CLOCK_WISE_ROTATION = {
 	{ 0,1 },
 	{ -1, 0 }
 };
-
-/*
- these are sheeer operations (i think)
- do not cheat of off main, implement the sheer and see how that goes
- */
-const Matrix2D MOVE_RIGHT = {
-	{ 2,0 },
-	{ 0,1 }
-};
-
-const Matrix2D MOVE_LEFT = {
-	{ 2,0 },
-	{ 0,1 }
-};
