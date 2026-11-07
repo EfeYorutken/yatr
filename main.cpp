@@ -1,20 +1,49 @@
+#include <vector>
 #include <print>
 #include <utility>
 
 #include "utils.cpp"
+#include "tetris_piece.cpp"
+
+const int w = 20;
+const int h = 5;
+
+void print_board(std::array<bool, w * h> b){
+
+	for(int i = h-1; i >= 0; --i){
+
+		for(int j = 0; j < w; ++j){
+			bool piece_of_piece = b.at( i*w + j);
+			std::print("{} ", piece_of_piece ? '#' : '.'  );
+		}
+
+		std::print("\n");
+
+	}
+
+}
 
 int main(){
 
-	Vector2D p = { 1,1 };
+	std::array<bool, w*h> board;
 
-	Matrix2D move_right = {
-		{ 2, 0 },
-		{ 0,1 }
-	};
+	for(auto p : TETRIS_PIECES){
 
-	Vector2D p2 = apply_transformation( p, move_right );
+		board.fill(false);
 
-	print("{}\n", p2);
+		for(auto cords : p.pieces){
+			int x = cords.first;
+			int y = cords.second;
+
+			board.at(x + y * w) = true;
+
+		}
+
+		print_board(board);
+
+		std::print("\n----\n");
+
+	}
 
 	return 0;
 }
