@@ -1,6 +1,8 @@
 #include "utils.cpp"
 
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 #include <array>
 #include <algorithm>
 
@@ -23,64 +25,46 @@ class Piece{
 
 		Piece( std::vector<Vector2D> ps ) : pieces(ps){}
 
-		void rotate_ccw(){
-			this->rotate_with(COUNTER_CLOCK_WISE_ROTATION );
-		}
+		template<size_t W, size_t H>
+			Piece( std::array<std::array<bool, W>,H> drawing){
+				this->pieces = {};
 
-		void rotate_cw(){
-			this->rotate_with(CLOCK_WISE_ROTATION);
-		}
+				for(int i = 0; i < H; ++i){
+					for(int j = 0; j < W; ++j){
+
+						int x = W - j - 1;
+						int y = H - i - 1;
+
+						if( drawing.at(i).at(j) ){ this->pieces.push_back({x,y}); }
+					}
+				}
+
+			}
+
+		void rotate_ccw(){ this->rotate_with(COUNTER_CLOCK_WISE_ROTATION ); }
+		void rotate_cw(){ this->rotate_with(CLOCK_WISE_ROTATION); }
 
 };
 
 const std::array<Piece, 7> TETRIS_PIECES = {
 
-	Piece({//I piece
-			{0,0},
-			{0,1},
-			{0,2},
-			{0,3},
-			}),
+	Piece({ {0,0}, {0,1}, {0,2}, {0,3}, }), //I piece
 
-	Piece({//O piece
-			{0,0},
-			{1,0},
-			{0,1},
-			{1,1},
-			}),
+	Piece({ {0,0}, {1,0}, {0,1}, {1,1}, }), //O piece
 
-	Piece({//T piece
-			{0,0},
-			{1,0},
-			{2,0},
-			{1,1}
-			}),
+	Piece({ {0,0}, {1,0}, {2,0}, {1,1} }), //T piece
 
-	Piece({//S piece
-			{0,0},
-			{1,0},
-			{1,1},
-			{2,1}
-			}),
+	Piece({ {0,0}, {1,0}, {1,1}, {2,1} }), //S piece
 
-	Piece({//Z piece
-			{0,1},
-			{1,1},
-			{1,0},
-			{2,0}
-			}),
+	Piece({ {0,1}, {1,1}, {1,0}, {2,0} }), //Z piece
 
-	Piece({//J piece
-			{0,0},
-			{1,0},
-			{1,1},
-			{1,2},
-			}),
+	Piece({ {0,0}, {1,0}, {1,1}, {1,2}, }), //J piece
 
-	Piece({//L piece
-			{0,0},
-			{1,0},
-			{0,1},
-			{0,2},
-			}),
+	Piece({ {0,0}, {1,0}, {0,1}, {0,2}, }), //L piece
 };
+
+Piece constexpr get_random_piece(){
+	srand(time(0));
+
+	return TETRIS_PIECES.at(rand() % TETRIS_PIECES.size()); 
+}

@@ -1,8 +1,6 @@
-#include <vector>
+#include <array>
 #include <print>
-#include <utility>
 
-#include "utils.cpp"
 #include "tetris_piece.cpp"
 
 const int w = 20;
@@ -25,25 +23,24 @@ void print_board(std::array<bool, w * h> b){
 
 int main(){
 
-	std::array<bool, w*h> board;
+	std::array<std::array<bool, 3>, 3> drawing = {{
 
-	for(auto p : TETRIS_PIECES){
+		{false, false, false},
+		{false, true, false},
+		{true, true, true},
 
-		board.fill(false);
+	}};
 
-		for(auto cords : p.pieces){
-			int x = cords.first;
-			int y = cords.second;
+	std::array<bool, w * h> board;
+	board.fill(false);
 
-			board.at(x + y * w) = true;
+	Piece random_piece = get_random_piece();
 
-		}
-
-		print_board(board);
-
-		std::print("\n----\n");
-
+	for(auto p : random_piece.pieces){
+		board.at(p.first + p.second * w) = true;
 	}
+
+	print_board(board);
 
 	return 0;
 }
