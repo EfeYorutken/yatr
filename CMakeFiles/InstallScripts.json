@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/efe/home/projects/yatr/cmake_install.cmake",
+		"/home/efe/home/projects/yatr/_deps/ftxui-build/cmake_install.cmake",
+		"/home/efe/home/projects/yatr/_deps/ftxui-build/examples/cmake_install.cmake",
+		"/home/efe/home/projects/yatr/_deps/ftxui-build/doc/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

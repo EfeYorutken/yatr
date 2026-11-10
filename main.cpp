@@ -1,7 +1,11 @@
+/*
+	 implement the engine.cpp
+ */
+
 #include <array>
 #include <print>
 
-#include "tetris_piece.cpp"
+#include "game_engine.cpp"
 
 const int w = 20;
 const int h = 5;
@@ -23,24 +27,9 @@ void print_board(std::array<bool, w * h> b){
 
 int main(){
 
-	std::array<std::array<bool, 3>, 3> drawing = {{
+	Engine<w, h> engine;
 
-		{false, false, false},
-		{false, true, false},
-		{true, true, true},
-
-	}};
-
-	std::array<bool, w * h> board;
-	board.fill(false);
-
-	Piece random_piece = get_random_piece();
-
-	for(auto p : random_piece.pieces){
-		board.at(p.first + p.second * w) = true;
-	}
-
-	print_board(board);
+	engine.display();
 
 	return 0;
 }
