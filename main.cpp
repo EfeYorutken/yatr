@@ -8,7 +8,7 @@
 #include "game_engine.cpp"
 
 const int w = 20;
-const int h = 5;
+const int h = 35;
 
 void print_board(std::array<bool, w * h> b){
 
@@ -27,7 +27,7 @@ void print_board(std::array<bool, w * h> b){
 
 int main(){
 
-	Engine<w, h> engine;
+	Engine<w, h, 10> engine;
 
 	engine.display();
 

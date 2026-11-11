@@ -32,6 +32,7 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   _deps/ftxui-src/include/ftxui/util/ref.hpp \
   _deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
   game_engine.cpp \
+  tetris_piece.cpp \
   utils.cpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -106,6 +107,7 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/c++/16/algorithm \
   /usr/include/c++/16/array \
   /usr/include/c++/16/atomic \
   /usr/include/c++/16/backward/auto_ptr.h \
@@ -182,6 +184,7 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/c++/16/bits/print.h \
   /usr/include/c++/16/bits/ptr_traits.h \
   /usr/include/c++/16/bits/range_access.h \
+  /usr/include/c++/16/bits/ranges_algo.h \
   /usr/include/c++/16/bits/ranges_algobase.h \
   /usr/include/c++/16/bits/ranges_base.h \
   /usr/include/c++/16/bits/ranges_cmp.h \
@@ -275,6 +278,7 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/c++/16/ostream \
   /usr/include/c++/16/print \
   /usr/include/c++/16/pstl/execution_defs.h \
+  /usr/include/c++/16/pstl/glue_algorithm_defs.h \
   /usr/include/c++/16/pstl/glue_memory_defs.h \
   /usr/include/c++/16/pstl/pstl_config.h \
   /usr/include/c++/16/queue \
@@ -486,13 +490,13 @@ CMakeFiles/yatr.dir/main.cpp.o:
 
 /usr/include/c++/16/functional:
 
-/usr/include/c++/16/bits/chrono.h:
+/usr/include/c++/16/ext/concurrence.h:
 
 /usr/include/c++/16/bits/basic_string.tcc:
 
 /usr/include/c++/16/bits/basic_string.h:
 
-/usr/include/c++/16/bits/basic_ios.h:
+tetris_piece.cpp:
 
 /usr/include/c++/16/bits/atomic_base.h:
 
@@ -515,6 +519,12 @@ CMakeFiles/yatr.dir/main.cpp.o:
 /usr/include/c++/16/queue:
 
 /usr/include/c++/16/array:
+
+/usr/include/c++/16/bits/basic_ios.h:
+
+/usr/include/c++/16/algorithm:
+
+/usr/include/c++/16/chrono:
 
 /usr/include/stdio.h:
 
@@ -618,6 +628,16 @@ _deps/ftxui-src/include/ftxui/dom/take_any_args.hpp:
 
 /usr/include/bits/select.h:
 
+/usr/include/bits/types/cookie_io_functions_t.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/c++/16/ext/aligned_buffer.h:
+
+/usr/include/c++/16/bits/memoryfwd.h:
+
+/usr/include/c++/16/bits/stl_construct.h:
+
 _deps/ftxui-src/include/ftxui/screen/box.hpp:
 
 _deps/ftxui-src/include/ftxui/dom/node.hpp:
@@ -671,16 +691,6 @@ _deps/ftxui-src/include/ftxui/screen/color.hpp:
 /usr/include/c++/16/ratio:
 
 _deps/ftxui-src/include/ftxui/dom/linear_gradient.hpp:
-
-/usr/include/bits/types/cookie_io_functions_t.h:
-
-/usr/include/sys/select.h:
-
-/usr/include/c++/16/ext/aligned_buffer.h:
-
-/usr/include/c++/16/bits/memoryfwd.h:
-
-/usr/include/c++/16/bits/stl_construct.h:
 
 /usr/include/bits/types/struct_sched_param.h:
 
@@ -782,20 +792,6 @@ _deps/ftxui-src/include/ftxui/dom/direction.hpp:
 
 /usr/include/c++/16/bits/stl_deque.h:
 
-/usr/include/features.h:
-
-/usr/include/bits/sched.h:
-
-/usr/include/bits/types/__FILE.h:
-
-/usr/include/c++/16/bits/istream.tcc:
-
-/usr/include/c++/16/bits/stl_tree.h:
-
-/usr/include/c++/16/cerrno:
-
-_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp:
-
 /usr/include/c++/16/bits/atomic_lockfree_defines.h:
 
 /usr/include/bits/cpu-set.h:
@@ -809,6 +805,20 @@ _deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp:
 /usr/include/bits/types/FILE.h:
 
 utils.cpp:
+
+/usr/include/features.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/c++/16/bits/istream.tcc:
+
+/usr/include/c++/16/bits/stl_tree.h:
+
+/usr/include/c++/16/cerrno:
+
+_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp:
 
 /usr/include/alloca.h:
 
@@ -825,6 +835,12 @@ _deps/ftxui-src/include/ftxui/dom/selection.hpp:
 /usr/include/bits/stdint-intn.h:
 
 /usr/include/bits/types/clockid_t.h:
+
+/usr/include/c++/16/ext/string_conversions.h:
+
+/usr/include/c++/16/bits/charconv.h:
+
+/usr/include/bits/atomic_wide_counter.h:
 
 /usr/include/c++/16/bits/stl_pair.h:
 
@@ -855,6 +871,8 @@ _deps/ftxui-src/include/ftxui/screen/cell.hpp:
 /usr/lib/libc.so:
 
 /usr/include/bits/pthreadtypes.h:
+
+/usr/include/c++/16/bits/chrono.h:
 
 /usr/include/c++/16/bits/concept_check.h:
 
@@ -960,13 +978,15 @@ _deps/ftxui-src/include/ftxui/util/ref.hpp:
 
 /usr/include/c++/16/bits/range_access.h:
 
-/usr/include/sys/types.h:
-
-/usr/include/c++/16/bits/ranges_algobase.h:
+/usr/include/c++/16/bits/ranges_algo.h:
 
 /usr/include/c++/16/bits/ranges_base.h:
 
 /usr/include/c++/16/bits/uses_allocator_args.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/c++/16/bits/ranges_algobase.h:
 
 /usr/include/c++/16/bits/ranges_cmp.h:
 
@@ -1036,8 +1056,6 @@ _deps/ftxui-src/include/ftxui/util/export.hpp:
 
 /usr/include/c++/16/bits/version.h:
 
-/usr/include/c++/16/chrono:
-
 /usr/include/pthread.h:
 
 /usr/include/c++/16/compare:
@@ -1060,6 +1078,8 @@ _deps/ftxui-src/include/ftxui/util/export.hpp:
 
 /usr/include/c++/16/cwchar:
 
+/usr/include/c++/16/pstl/glue_algorithm_defs.h:
+
 /usr/include/c++/16/debug/assertions.h:
 
 /usr/include/c++/16/bits/unordered_map.h:
@@ -1075,11 +1095,3 @@ _deps/ftxui-src/include/ftxui/util/export.hpp:
 /usr/include/c++/16/debug/debug.h:
 
 /usr/include/c++/16/exception:
-
-/usr/include/c++/16/ext/concurrence.h:
-
-/usr/include/c++/16/bits/charconv.h:
-
-/usr/include/bits/atomic_wide_counter.h:
-
-/usr/include/c++/16/ext/string_conversions.h:

@@ -33,6 +33,7 @@ CMakeFiles/yatr.dir/main.cpp.o
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/ref.hpp
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp
  /home/efe/home/projects/yatr/game_engine.cpp
+ /home/efe/home/projects/yatr/tetris_piece.cpp
  /home/efe/home/projects/yatr/utils.cpp
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
@@ -107,6 +108,7 @@ CMakeFiles/yatr.dir/main.cpp.o
  /usr/include/bits/wchar.h
  /usr/include/bits/wctype-wchar.h
  /usr/include/bits/wordsize.h
+ /usr/include/c++/16/algorithm
  /usr/include/c++/16/array
  /usr/include/c++/16/atomic
  /usr/include/c++/16/backward/auto_ptr.h
@@ -183,6 +185,7 @@ CMakeFiles/yatr.dir/main.cpp.o
  /usr/include/c++/16/bits/print.h
  /usr/include/c++/16/bits/ptr_traits.h
  /usr/include/c++/16/bits/range_access.h
+ /usr/include/c++/16/bits/ranges_algo.h
  /usr/include/c++/16/bits/ranges_algobase.h
  /usr/include/c++/16/bits/ranges_base.h
  /usr/include/c++/16/bits/ranges_cmp.h
@@ -276,6 +279,7 @@ CMakeFiles/yatr.dir/main.cpp.o
  /usr/include/c++/16/ostream
  /usr/include/c++/16/print
  /usr/include/c++/16/pstl/execution_defs.h
+ /usr/include/c++/16/pstl/glue_algorithm_defs.h
  /usr/include/c++/16/pstl/glue_memory_defs.h
  /usr/include/c++/16/pstl/pstl_config.h
  /usr/include/c++/16/queue

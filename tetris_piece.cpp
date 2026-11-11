@@ -23,6 +23,8 @@ class Piece{
 	public:
 		std::vector<Vector2D> pieces;
 
+		Piece() : pieces({}){}
+
 		Piece( std::vector<Vector2D> ps ) : pieces(ps){}
 
 		template<size_t W, size_t H>

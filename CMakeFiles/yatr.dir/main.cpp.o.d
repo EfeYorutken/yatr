@@ -156,11 +156,38 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/uniform_int_dist.h \
  /usr/include/c++/16/bits/stl_tempbuf.h \
  /usr/include/c++/16/bits/unicode-data.h /usr/include/c++/16/bits/print.h \
- /home/efe/home/projects/yatr/game_engine.cpp \
+ /home/efe/home/projects/yatr/game_engine.cpp /usr/include/c++/16/set \
+ /usr/include/c++/16/bits/stl_tree.h \
+ /usr/include/c++/16/ext/aligned_buffer.h \
+ /usr/include/c++/16/bits/node_handle.h \
+ /usr/include/c++/16/bits/stl_set.h \
+ /usr/include/c++/16/bits/stl_multiset.h \
+ /home/efe/home/projects/yatr/utils.cpp /usr/include/c++/16/utility \
+ /usr/include/c++/16/bits/stl_relops.h /usr/include/c++/16/bits/intcmp.h \
+ /home/efe/home/projects/yatr/tetris_piece.cpp /usr/include/c++/16/vector \
+ /usr/include/c++/16/bits/stl_uninitialized.h \
+ /usr/include/c++/16/bits/stl_vector.h \
+ /usr/include/c++/16/bits/stl_bvector.h \
+ /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/algorithm \
+ /usr/include/c++/16/bits/ranges_algo.h \
+ /usr/include/c++/16/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/16/pstl/execution_defs.h \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
+ /usr/include/c++/16/functional /usr/include/c++/16/bits/refwrap.h \
+ /usr/include/c++/16/bits/std_function.h \
+ /usr/include/c++/16/unordered_map \
+ /usr/include/c++/16/bits/unordered_map.h \
+ /usr/include/c++/16/bits/hashtable.h \
+ /usr/include/c++/16/bits/hashtable_policy.h \
+ /usr/include/c++/16/bits/binders.h /usr/include/c++/16/bits/funcwrap.h \
+ /usr/include/c++/16/bits/mofunc_impl.h \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/color.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/export.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/terminal.hpp \
- /usr/include/c++/16/memory /usr/include/c++/16/bits/stl_uninitialized.h \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/surface.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/box.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/cell.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/elements.hpp \
+ /usr/include/c++/16/memory \
  /usr/include/c++/16/bits/stl_raw_storage_iter.h \
  /usr/include/c++/16/bits/align.h /usr/include/c++/16/bits/unique_ptr.h \
  /usr/include/c++/16/bits/ostream.h /usr/include/c++/16/ios \
@@ -169,8 +196,6 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/shared_ptr.h \
  /usr/include/c++/16/bits/shared_ptr_base.h \
  /usr/include/c++/16/bits/allocated_ptr.h \
- /usr/include/c++/16/bits/refwrap.h \
- /usr/include/c++/16/ext/aligned_buffer.h \
  /usr/include/c++/16/ext/concurrence.h \
  /usr/include/c++/16/bits/shared_ptr_atomic.h \
  /usr/include/c++/16/bits/atomic_base.h \
@@ -180,34 +205,13 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/ranges_uninitialized.h \
  /usr/include/c++/16/bits/out_ptr.h \
  /usr/include/c++/16/pstl/glue_memory_defs.h \
- /usr/include/c++/16/pstl/execution_defs.h /usr/include/c++/16/vector \
- /usr/include/c++/16/bits/stl_vector.h \
- /usr/include/c++/16/bits/stl_bvector.h \
- /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/set \
- /usr/include/c++/16/bits/stl_tree.h \
- /usr/include/c++/16/bits/node_handle.h \
- /usr/include/c++/16/bits/stl_set.h \
- /usr/include/c++/16/bits/stl_multiset.h \
- /home/efe/home/projects/yatr/utils.cpp /usr/include/c++/16/utility \
- /usr/include/c++/16/bits/stl_relops.h /usr/include/c++/16/bits/intcmp.h \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/elements.hpp \
- /usr/include/c++/16/functional /usr/include/c++/16/bits/std_function.h \
- /usr/include/c++/16/unordered_map \
- /usr/include/c++/16/bits/unordered_map.h \
- /usr/include/c++/16/bits/hashtable.h \
- /usr/include/c++/16/bits/hashtable_policy.h \
- /usr/include/c++/16/bits/binders.h /usr/include/c++/16/bits/funcwrap.h \
- /usr/include/c++/16/bits/mofunc_impl.h \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/surface.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/box.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/cell.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/direction.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/flexbox_config.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/linear_gradient.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/node.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/requirement.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/screen.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/terminal.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/selection.hpp \
  /usr/include/c++/16/sstream /usr/include/c++/16/istream \
  /usr/include/c++/16/ostream /usr/include/c++/16/bits/ostream_print.h \
