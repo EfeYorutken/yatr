@@ -157,6 +157,8 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/stl_tempbuf.h \
  /usr/include/c++/16/bits/unicode-data.h /usr/include/c++/16/bits/print.h \
  /home/efe/home/projects/yatr/game_engine.cpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/color.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/export.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/terminal.hpp \
  /usr/include/c++/16/memory /usr/include/c++/16/bits/stl_uninitialized.h \
  /usr/include/c++/16/bits/stl_raw_storage_iter.h \
@@ -181,9 +183,8 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/pstl/execution_defs.h /usr/include/c++/16/vector \
  /usr/include/c++/16/bits/stl_vector.h \
  /usr/include/c++/16/bits/stl_bvector.h \
- /usr/include/c++/16/bits/vector.tcc \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/export.hpp \
- /usr/include/c++/16/set /usr/include/c++/16/bits/stl_tree.h \
+ /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/set \
+ /usr/include/c++/16/bits/stl_tree.h \
  /usr/include/c++/16/bits/node_handle.h \
  /usr/include/c++/16/bits/stl_set.h \
  /usr/include/c++/16/bits/stl_multiset.h \
@@ -198,7 +199,6 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/binders.h /usr/include/c++/16/bits/funcwrap.h \
  /usr/include/c++/16/bits/mofunc_impl.h \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/color.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/surface.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/box.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/cell.hpp \
