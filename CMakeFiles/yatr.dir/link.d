@@ -37,8 +37,7 @@ yatr: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o \
-  /usr/lib/ld-linux-x86-64.so.2
+  /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o:
 
@@ -117,5 +116,3 @@ _deps/ftxui-build/libftxui-screen.a:
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o:
-
-/usr/lib/ld-linux-x86-64.so.2:

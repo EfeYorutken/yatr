@@ -10,6 +10,7 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   _deps/ftxui-src/include/ftxui/component/component_options.hpp \
   _deps/ftxui-src/include/ftxui/component/event.hpp \
   _deps/ftxui-src/include/ftxui/component/mouse.hpp \
+  _deps/ftxui-src/include/ftxui/component/screen_interactive.hpp \
   _deps/ftxui-src/include/ftxui/component/task.hpp \
   _deps/ftxui-src/include/ftxui/dom/canvas.hpp \
   _deps/ftxui-src/include/ftxui/dom/deprecated.hpp \
@@ -120,6 +121,7 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/c++/16/bits/allocator.h \
   /usr/include/c++/16/bits/atomic_base.h \
   /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/16/bits/atomic_timed_wait.h \
   /usr/include/c++/16/bits/atomic_wait.h \
   /usr/include/c++/16/bits/basic_ios.h \
   /usr/include/c++/16/bits/basic_ios.tcc \
@@ -192,12 +194,14 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/c++/16/bits/ranges_util.h \
   /usr/include/c++/16/bits/refwrap.h \
   /usr/include/c++/16/bits/requires_hosted.h \
+  /usr/include/c++/16/bits/semaphore_base.h \
   /usr/include/c++/16/bits/shared_ptr.h \
   /usr/include/c++/16/bits/shared_ptr_atomic.h \
   /usr/include/c++/16/bits/shared_ptr_base.h \
   /usr/include/c++/16/bits/sstream.tcc \
   /usr/include/c++/16/bits/std_abs.h \
   /usr/include/c++/16/bits/std_function.h \
+  /usr/include/c++/16/bits/std_thread.h \
   /usr/include/c++/16/bits/stdexcept_except.h \
   /usr/include/c++/16/bits/stdexcept_throw.h \
   /usr/include/c++/16/bits/stdexcept_throwfwd.h \
@@ -211,15 +215,12 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/c++/16/bits/stl_iterator.h \
   /usr/include/c++/16/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/16/bits/stl_iterator_base_types.h \
-  /usr/include/c++/16/bits/stl_multiset.h \
   /usr/include/c++/16/bits/stl_pair.h \
   /usr/include/c++/16/bits/stl_queue.h \
   /usr/include/c++/16/bits/stl_raw_storage_iter.h \
   /usr/include/c++/16/bits/stl_relops.h \
-  /usr/include/c++/16/bits/stl_set.h \
   /usr/include/c++/16/bits/stl_stack.h \
   /usr/include/c++/16/bits/stl_tempbuf.h \
-  /usr/include/c++/16/bits/stl_tree.h \
   /usr/include/c++/16/bits/stl_uninitialized.h \
   /usr/include/c++/16/bits/stl_vector.h \
   /usr/include/c++/16/bits/stream_iterator.h \
@@ -227,6 +228,7 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/c++/16/bits/streambuf_iterator.h \
   /usr/include/c++/16/bits/string_view.tcc \
   /usr/include/c++/16/bits/stringfwd.h \
+  /usr/include/c++/16/bits/this_thread_sleep.h \
   /usr/include/c++/16/bits/unicode-data.h \
   /usr/include/c++/16/bits/unicode.h \
   /usr/include/c++/16/bits/uniform_int_dist.h \
@@ -284,15 +286,17 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/c++/16/queue \
   /usr/include/c++/16/ranges \
   /usr/include/c++/16/ratio \
-  /usr/include/c++/16/set \
+  /usr/include/c++/16/semaphore \
   /usr/include/c++/16/span \
   /usr/include/c++/16/sstream \
   /usr/include/c++/16/stack \
   /usr/include/c++/16/stdexcept \
+  /usr/include/c++/16/stop_token \
   /usr/include/c++/16/streambuf \
   /usr/include/c++/16/string \
   /usr/include/c++/16/string_view \
   /usr/include/c++/16/system_error \
+  /usr/include/c++/16/thread \
   /usr/include/c++/16/tuple \
   /usr/include/c++/16/type_traits \
   /usr/include/c++/16/typeinfo \
@@ -336,6 +340,7 @@ CMakeFiles/yatr.dir/main.cpp.o: main.cpp \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/single_threaded.h \
+  /usr/include/sys/time.h \
   /usr/include/sys/types.h \
   /usr/include/time.h \
   /usr/include/wchar.h \
@@ -404,6 +409,8 @@ CMakeFiles/yatr.dir/main.cpp.o:
 
 /usr/include/time.h:
 
+/usr/include/sys/time.h:
+
 /usr/include/sys/cdefs.h:
 
 /usr/include/stdlib.h:
@@ -423,6 +430,8 @@ CMakeFiles/yatr.dir/main.cpp.o:
 /usr/include/linux/errno.h:
 
 /usr/include/gnu/stubs-64.h:
+
+/usr/include/features-time64.h:
 
 /usr/include/errno.h:
 
@@ -468,8 +477,6 @@ CMakeFiles/yatr.dir/main.cpp.o:
 
 /usr/include/c++/16/span:
 
-/usr/include/c++/16/set:
-
 /usr/include/c++/16/pstl/glue_memory_defs.h:
 
 /usr/include/c++/16/print:
@@ -507,6 +514,8 @@ tetris_piece.cpp:
 /usr/include/bits/time64.h:
 
 /usr/include/bits/stdlib-float.h:
+
+/usr/include/c++/16/stop_token:
 
 /usr/include/c++/16/bits/algorithmfwd.h:
 
@@ -554,10 +563,6 @@ tetris_piece.cpp:
 
 _deps/ftxui-src/include/ftxui/screen/screen.hpp:
 
-/usr/include/gnu/stubs.h:
-
-/usr/include/c++/16/bits/std_abs.h:
-
 /usr/include/bits/types/sigset_t.h:
 
 /usr/include/c++/16/bits/memory_resource.h:
@@ -576,15 +581,11 @@ _deps/ftxui-src/include/ftxui/screen/screen.hpp:
 
 /usr/include/bits/types/__locale_t.h:
 
-/usr/include/c++/16/ranges:
-
-/usr/include/c++/16/bits/char_traits.h:
-
-/usr/include/bits/types/__fpos_t.h:
-
 /usr/include/bits/types/clock_t.h:
 
 /usr/include/c++/16/bits/nested_exception.h:
+
+/usr/include/c++/16/bits/this_thread_sleep.h:
 
 /usr/include/bits/types.h:
 
@@ -638,14 +639,6 @@ _deps/ftxui-src/include/ftxui/dom/take_any_args.hpp:
 
 /usr/include/c++/16/bits/stl_construct.h:
 
-_deps/ftxui-src/include/ftxui/screen/box.hpp:
-
-_deps/ftxui-src/include/ftxui/dom/node.hpp:
-
-_deps/ftxui-src/include/ftxui/dom/elements.hpp:
-
-/usr/include/c++/16/bits/stl_multiset.h:
-
 /usr/include/sys/single_threaded.h:
 
 /usr/include/c++/16/atomic:
@@ -660,13 +653,13 @@ _deps/ftxui-src/include/ftxui/component/component.hpp:
 
 /usr/include/bits/types/__fpos64_t.h:
 
-/usr/include/c++/16/clocale:
-
-/usr/include/asm-generic/errno-base.h:
-
-_deps/ftxui-src/include/ftxui/screen/color.hpp:
-
 /usr/include/c++/16/deque:
+
+/usr/lib/libc.so:
+
+/usr/include/bits/pthreadtypes.h:
+
+_deps/ftxui-src/include/ftxui/screen/cell.hpp:
 
 /usr/include/bits/waitstatus.h:
 
@@ -680,6 +673,18 @@ _deps/ftxui-src/include/ftxui/screen/color.hpp:
 
 /usr/include/asm-generic/int-ll64.h:
 
+_deps/ftxui-src/include/ftxui/screen/box.hpp:
+
+_deps/ftxui-src/include/ftxui/dom/node.hpp:
+
+_deps/ftxui-src/include/ftxui/dom/elements.hpp:
+
+/usr/include/c++/16/clocale:
+
+_deps/ftxui-src/include/ftxui/screen/color.hpp:
+
+/usr/include/asm-generic/errno-base.h:
+
 /usr/include/c++/16/backward/auto_ptr.h:
 
 /usr/include/c++/16/bits/atomic_wait.h:
@@ -692,25 +697,17 @@ _deps/ftxui-src/include/ftxui/screen/color.hpp:
 
 _deps/ftxui-src/include/ftxui/dom/linear_gradient.hpp:
 
-/usr/include/bits/types/struct_sched_param.h:
-
-/usr/include/c++/16/cwctype:
-
-/usr/include/c++/16/bits/cxxabi_forced.h:
-
-/usr/include/c++/16/bits/funcwrap.h:
+/usr/include/bits/types/error_t.h:
 
 _deps/ftxui-src/include/ftxui/dom/flexbox_config.hpp:
+
+/usr/include/c++/16/bits/binders.h:
+
+_deps/ftxui-src/include/ftxui/dom/direction.hpp:
 
 /usr/include/c++/16/optional:
 
 /usr/include/c++/16/bits/stl_algo.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h:
-
-/usr/include/bits/stdint-uintn.h:
-
-/usr/include/asm/errno.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so:
 
@@ -727,6 +724,32 @@ _deps/ftxui-src/include/ftxui/component/animation.hpp:
 main.cpp:
 
 /usr/include/asm/posix_types.h:
+
+/usr/include/c++/16/bits/stl_deque.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/types/struct_sched_param.h:
+
+/usr/include/c++/16/bits/funcwrap.h:
+
+/usr/include/c++/16/bits/ranges_uninitialized.h:
+
+/usr/include/c++/16/bits/stl_raw_storage_iter.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h:
+
+/usr/include/bits/stdint-uintn.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/c++/16/bits/atomic_timed_wait.h:
+
+/usr/include/bits/timex.h:
+
+_deps/ftxui-src/include/ftxui/component/screen_interactive.hpp:
+
+/usr/include/c++/16/exception:
 
 /usr/include/c++/16/bits/alloc_traits.h:
 
@@ -768,29 +791,19 @@ _deps/ftxui-src/include/ftxui/screen/terminal.hpp:
 
 _deps/ftxui-src/include/ftxui/component/component_options.hpp:
 
-/usr/include/asm/bitsperlong.h:
-
 _deps/ftxui-src/include/ftxui/screen/string.hpp:
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
-_deps/ftxui-src/include/ftxui/component/mouse.hpp:
+/usr/include/c++/16/semaphore:
 
-/usr/include/bits/timex.h:
+/usr/include/asm/bitsperlong.h:
+
+_deps/ftxui-src/include/ftxui/component/mouse.hpp:
 
 _deps/ftxui-src/include/ftxui/component/task.hpp:
 
 /usr/include/bits/libc-header-start.h:
-
-/usr/include/bits/types/error_t.h:
-
-/usr/include/c++/16/bits/binders.h:
-
-_deps/ftxui-src/include/ftxui/dom/direction.hpp:
-
-/usr/include/bits/waitflags.h:
-
-/usr/include/c++/16/bits/stl_deque.h:
 
 /usr/include/c++/16/bits/atomic_lockfree_defines.h:
 
@@ -814,8 +827,6 @@ utils.cpp:
 
 /usr/include/c++/16/bits/istream.tcc:
 
-/usr/include/c++/16/bits/stl_tree.h:
-
 /usr/include/c++/16/cerrno:
 
 _deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp:
@@ -836,11 +847,9 @@ _deps/ftxui-src/include/ftxui/dom/selection.hpp:
 
 /usr/include/bits/types/clockid_t.h:
 
-/usr/include/c++/16/ext/string_conversions.h:
+/usr/include/c++/16/ext/alloc_traits.h:
 
-/usr/include/c++/16/bits/charconv.h:
-
-/usr/include/bits/atomic_wide_counter.h:
+/usr/include/c++/16/bits/unordered_map.h:
 
 /usr/include/c++/16/bits/stl_pair.h:
 
@@ -862,15 +871,25 @@ _deps/ftxui-src/include/ftxui/dom/selection.hpp:
 
 /usr/include/bits/long-double.h:
 
-_deps/ftxui-src/include/ftxui/screen/cell.hpp:
+/usr/include/c++/16/ranges:
 
-/usr/include/c++/16/bits/stl_raw_storage_iter.h:
+/usr/include/bits/types/__fpos_t.h:
 
-/usr/include/c++/16/bits/ranges_uninitialized.h:
+/usr/include/c++/16/bits/char_traits.h:
 
-/usr/lib/libc.so:
+/usr/include/c++/16/ext/string_conversions.h:
 
-/usr/include/bits/pthreadtypes.h:
+/usr/include/bits/atomic_wide_counter.h:
+
+/usr/include/c++/16/bits/charconv.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/c++/16/bits/std_abs.h:
+
+/usr/include/c++/16/bits/cxxabi_forced.h:
+
+/usr/include/c++/16/cwctype:
 
 /usr/include/c++/16/bits/chrono.h:
 
@@ -907,6 +926,8 @@ _deps/ftxui-src/include/ftxui/screen/cell.hpp:
 /usr/include/c++/16/bits/exception_defines.h:
 
 /usr/include/c++/16/bits/formatfwd.h:
+
+/usr/include/c++/16/thread:
 
 /usr/include/c++/16/bits/functexcept.h:
 
@@ -1034,11 +1055,9 @@ _deps/ftxui-src/include/ftxui/util/export.hpp:
 
 /usr/include/c++/16/bits/stl_relops.h:
 
-/usr/include/features-time64.h:
-
-/usr/include/c++/16/bits/stl_set.h:
-
 /usr/include/asm-generic/errno.h:
+
+/usr/include/c++/16/bits/semaphore_base.h:
 
 /usr/include/c++/16/bits/stl_vector.h:
 
@@ -1072,6 +1091,8 @@ _deps/ftxui-src/include/ftxui/util/export.hpp:
 
 /usr/include/c++/16/cstdint:
 
+/usr/include/c++/16/bits/std_thread.h:
+
 /usr/include/c++/16/ctime:
 
 /usr/include/linux/sched/types.h:
@@ -1082,10 +1103,6 @@ _deps/ftxui-src/include/ftxui/util/export.hpp:
 
 /usr/include/c++/16/debug/assertions.h:
 
-/usr/include/c++/16/bits/unordered_map.h:
-
-/usr/include/c++/16/ext/alloc_traits.h:
-
 /usr/include/asm-generic/bitsperlong.h:
 
 /usr/include/asm-generic/types.h:
@@ -1093,5 +1110,3 @@ _deps/ftxui-src/include/ftxui/util/export.hpp:
 /usr/include/c++/16/bits/stl_bvector.h:
 
 /usr/include/c++/16/debug/debug.h:
-
-/usr/include/c++/16/exception:

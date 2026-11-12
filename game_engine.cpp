@@ -1,6 +1,5 @@
 #include <array>
 #include <optional>
-#include <set>//i am getting some error when i try to use unordered, dont know why, will fix later
 
 #include "utils.cpp"
 #include "tetris_piece.cpp"
@@ -11,11 +10,13 @@
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/component/component.hpp>
 #include <ftxui/component/app.hpp>
+#include <ftxui/component/event.hpp>
 
 enum class MOVEMENT{
 	RIGHT,
 	LEFT,
-	DOWN
+	DOWN,
+	NONE
 };
 
 template<std::size_t dim_w, std::size_t dim_h, std::size_t col_count>
@@ -24,7 +25,7 @@ class Engine{
 	private:
 
 		std::array<bool, dim_w * dim_h> board;
-		std::set<Vector2D> filled_cells;//will turn this into an array of ints, showing how much of each row is filled
+		std::array<unsigned int, dim_h> occupancy_per_row;
 		ftxui::Screen screen = ftxui::Screen::Create(ftxui::Dimension::Fixed(dim_w), ftxui::Dimension::Fixed(dim_w));;
 		ftxui::Canvas drawable_board;
 		std::size_t cell_size;
@@ -33,7 +34,10 @@ class Engine{
 		Piece next;
 
 		void constexpr swap_held(){
-			if( !this->held ){ return; }
+			if( !this->held ){
+				this->held = this->current;
+				this->current = get_random_piece();
+			}
 			Piece temp = this->current;
 			this->current = this->held.value();
 			this->held = temp;
@@ -61,8 +65,8 @@ class Engine{
 		Engine() {
 
 				this->board.fill(false);
-				this->filled_cells = {};
 				this->cell_size = dim_w / col_count;
+				this->occupancy_per_row.fill(0);
 
 				this->drawable_board = ftxui::Canvas(dim_w, dim_h);
 
