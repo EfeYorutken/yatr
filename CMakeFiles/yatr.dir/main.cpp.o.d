@@ -243,8 +243,8 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /home/efe/home/projects/yatr/tetris_piece.cpp \
  /usr/include/c++/16/algorithm /usr/include/c++/16/bits/ranges_algo.h \
  /usr/include/c++/16/pstl/glue_algorithm_defs.h \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/screen_interactive.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/component.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/component_base.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/component_options.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/screen_interactive.hpp
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/component_options.hpp

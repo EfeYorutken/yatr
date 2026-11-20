@@ -1,5 +1,11 @@
 /*
-	 implement the engine.cpp
+
+	 there is a chat with geminei, read it
+
+	 essentially, containers are what listen to events and elements are what gets rendered
+	 you want to put the elements in the game_engine into a container and handle the
+	 event stuff that way
+
  */
 
 #include <chrono>
@@ -22,8 +28,8 @@
 #include <ftxui/component/screen_interactive.hpp>
 #include "ftxui/dom/elements.hpp"
 
-const int w = 20;
-const int h = 35;
+const int w = 50;
+const int h = 50;
 
 std::string Code(ftxui::Event event) {
   std::string codes;
@@ -36,12 +42,11 @@ std::string Code(ftxui::Event event) {
 
 int main(){
 
-	/*
 	Engine<w, h, 10> engine;
 
-	engine.display();
-	*/
+	engine.start();
 
+	/*
 	auto screen = ftxui::ScreenInteractive::Fullscreen();
 	std::vector<ftxui::Event> events;
 
@@ -69,7 +74,7 @@ int main(){
 			}
 			});
 
-	component |= ftxui::CatchEvent([&events, &top_left_corner](ftxui::Event e){ 
+	component |= ftxui::CatchEvent([&events, &top_left_corner](ftxui::Event e){
 
 			if( e == ftxui::Event::Custom ){
 			++top_left_corner.first;
@@ -88,6 +93,7 @@ int main(){
 		ticker_thread.join();
 	}
 
+	*/
 
 	return 0;
 }
