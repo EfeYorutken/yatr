@@ -1,8 +1,7 @@
 #include <array>
-#include <optional>
-
+#include <chrono>
+#include <thread>
 #include <format>
-#include <print>
 
 #include "utils.cpp"
 #include "tetris_piece.cpp"
@@ -123,37 +122,51 @@ class Engine{
 		void start(){
 
 			ftxui::ScreenInteractive screen = ftxui::ScreenInteractive::FixedSize(dim_w, dim_h);
+			std::atomic<bool> running = true;
+			int counter = 0;
 
-			auto held_drawer = [&](ftxui::Canvas& c){
+			ftxui::Component test = ftxui::Renderer([&counter](){
+					auto text = ftxui::text(std::format("count is {}", counter));
 
-				for(Vector2D block : this->held.pieces){
-					//craetes pieces that are seperated too much. will fix later
-					c.DrawBlock(block.first * cell_size, block.second * cell_size, true, ftxui::Color::Red);
-				}
+					return ftxui::hbox(text)
+					| ftxui::size(ftxui::WIDTH, ftxui::EQUAL, 100)
+					| ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, 100);
 
-			};
+					});
 
-			auto current_piecedrawer = [&](ftxui::Canvas& c){
-
-				for(Vector2D block : this->current.pieces){
-					//craetes pieces that are seperated too much. will fix later
-					c.DrawBlock(block.first * cell_size, block.second * cell_size, true, ftxui::Color::Red);
-				}
-
-			};
 
 			ftxui::Component held_piece = 
 					this->get_component_for_piece(this->held, {dim_w/5, dim_h/5});
+
+			std::thread ticker( [&running, &screen](){
+
+					while(running){
+					//make this into miliseconds or whatever and speed it up when a line is cleaned
+					std::this_thread::sleep_for(std::chrono::seconds(1));
+					screen.PostEvent(ftxui::Event::Custom);
+					}
+
+					} );
 
 			ftxui::Component drw_brd_component = 
 				this->get_component_for_piece(this->current, {dim_w * 2, dim_h * 4});
 
 			ftxui::Components all_components = {
 				held_piece,
-				drw_brd_component
+				drw_brd_component,
+				test
 			};
 
-			screen.Loop( ftxui::Container::Horizontal(all_components) );
+			ftxui::Component root = ftxui::Container::Horizontal(all_components) |
+				ftxui::CatchEvent([&counter](ftxui::Event e){
+						if(e == ftxui::Event::Custom){ ++counter; return true; }
+						return false;
+						});
+
+			screen.Loop( root );
+
+			running = false;
+			if(ticker.joinable()){ ticker.join(); }
 		}
 
 		void move_piece(MOVEMENT m){}
