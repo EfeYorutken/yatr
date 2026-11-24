@@ -31,15 +31,6 @@
 const int w = 50;
 const int h = 50;
 
-std::string Code(ftxui::Event event) {
-  std::string codes;
-  for (auto& it : event.input()) {
-    codes += " " + std::to_string('a' + (unsigned int)it);
-  }
-  return codes;
-}
-
-
 int main(){
 
 	Engine<w, h, 10> engine;

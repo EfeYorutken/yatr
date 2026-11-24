@@ -1,6 +1,7 @@
 #include <array>
-#include <format>
 #include <optional>
+
+#include <format>
 #include <print>
 
 #include "utils.cpp"
@@ -17,8 +18,8 @@
 enum class MOVEMENT{
 	RIGHT,
 	LEFT,
-	DOWN,
-	NONE
+	ROTATE_CLOCK_WISE,
+	ROTATE_COUNTER_CLOCK_WISE,
 };
 
 template<std::size_t dim_w, std::size_t dim_h, std::size_t col_count>
@@ -32,7 +33,7 @@ class Engine{
 		std::size_t cell_size;
 
 		Piece current;
-		std::optional<Piece> held;
+		Piece held;
 		Piece next;
 
 		int x_displace;
@@ -51,12 +52,13 @@ class Engine{
 		}
 
 		void constexpr swap_held(){
-			if( !this->held ){
+
+			if( this->held.pieces.empty() ){
 				this->held = this->current;
 				this->current = get_random_piece();
 			}
 			Piece temp = this->current;
-			this->current = this->held.value();
+			this->current = this->held;
 			this->held = temp;
 		}
 
@@ -77,6 +79,28 @@ class Engine{
 			}
 		}
 
+		ftxui::Component get_component_for_piece(const Piece& p, std::pair<int, int> d){
+
+			return ftxui::Renderer([&p, this, d](){
+
+					auto drawer = [&](ftxui::Canvas& c){
+					for(Vector2D block : p.pieces){
+							//craetes pieces that are seperated too much. will fix later
+							c.DrawBlock(block.first * cell_size, block.second * cell_size, true, ftxui::Color::Red);
+					}
+					};
+
+					auto res = ftxui::canvas(  d.first, d.second, drawer )
+					| ftxui::size(ftxui::WIDTH, ftxui::EQUAL, d.first)
+					| ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, d.second)
+					| ftxui::border;
+
+					return ftxui::vbox(ftxui::hbox(res));
+
+					});
+
+		}
+
 	public:
 
 		Engine() {
@@ -84,6 +108,7 @@ class Engine{
 				this->board.fill(false);
 				this->cell_size = dim_w / col_count;
 				this->occupancy_per_row.fill(0);
+				this->held = Piece();
 
 				this->drawable_board = ftxui::Canvas(int(dim_w / 2), dim_h);
 
@@ -99,28 +124,32 @@ class Engine{
 
 			ftxui::ScreenInteractive screen = ftxui::ScreenInteractive::FixedSize(dim_w, dim_h);
 
-			auto drawer = [&](ftxui::Canvas& c){
+			auto held_drawer = [&](ftxui::Canvas& c){
 
-				for(Vector2D block : this->current.pieces){
+				for(Vector2D block : this->held.pieces){
+					//craetes pieces that are seperated too much. will fix later
 					c.DrawBlock(block.first * cell_size, block.second * cell_size, true, ftxui::Color::Red);
 				}
 
 			};
 
-			ftxui::Component drw_brd_component = ftxui::Renderer([&]() {
+			auto current_piecedrawer = [&](ftxui::Canvas& c){
 
-					auto board = ftxui::canvas(dim_w * 2, dim_h * 4, drawer)
-					| ftxui::size(ftxui::WIDTH, ftxui::EQUAL, dim_w)
-					| ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, dim_h)
-					| ftxui::border;
+				for(Vector2D block : this->current.pieces){
+					//craetes pieces that are seperated too much. will fix later
+					c.DrawBlock(block.first * cell_size, block.second * cell_size, true, ftxui::Color::Red);
+				}
 
-					return ftxui::hbox({
-							board,
-							ftxui::filler(),
-							});
-					});
+			};
+
+			ftxui::Component held_piece = 
+					this->get_component_for_piece(this->held, {dim_w/5, dim_h/5});
+
+			ftxui::Component drw_brd_component = 
+				this->get_component_for_piece(this->current, {dim_w * 2, dim_h * 4});
 
 			ftxui::Components all_components = {
+				held_piece,
 				drw_brd_component
 			};
 
