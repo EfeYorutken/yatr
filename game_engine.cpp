@@ -1,5 +1,9 @@
+//error on browzer
+
+#include <algorithm>
 #include <array>
 #include <chrono>
+#include <climits>
 #include <thread>
 #include <format>
 
@@ -14,13 +18,6 @@
 #include <ftxui/component/app.hpp>
 #include <ftxui/component/event.hpp>
 
-enum class MOVEMENT{
-	RIGHT,
-	LEFT,
-	ROTATE_CLOCK_WISE,
-	ROTATE_COUNTER_CLOCK_WISE,
-};
-
 template<std::size_t dim_w, std::size_t dim_h, std::size_t col_count>
 class Engine{
 
@@ -34,6 +31,9 @@ class Engine{
 		Piece current;
 		Piece held;
 		Piece next;
+
+		Vector2D movement2apply;
+		Matrix2D rotation2apply;
 
 		int x_displace;
 		int y_displace;
@@ -111,11 +111,20 @@ class Engine{
 
 				this->drawable_board = ftxui::Canvas(int(dim_w / 2), dim_h);
 
-				this->current = get_random_piece();
 				this->next = get_random_piece();
+				this->current = get_random_piece();
+
+				/*
+				for(auto& block : this->current.pieces){
+					block = Vector2D{ dim_w / 2, dim_h / 2 } + block;
+				}
+				*/
 
 				this->x_displace = dim_w / 2;
 				this->y_displace = dim_h / 2;
+
+				this->movement2apply = { 0, 1 };//assuming down is +1
+				this->rotation2apply = {{1,0}, {0,1}};
 
 			}
 
@@ -123,20 +132,24 @@ class Engine{
 
 			ftxui::ScreenInteractive screen = ftxui::ScreenInteractive::FixedSize(dim_w, dim_h);
 			std::atomic<bool> running = true;
-			int counter = 0;
 
-			ftxui::Component test = ftxui::Renderer([&counter](){
-					auto text = ftxui::text(std::format("count is {}", counter));
+			ftxui::Component test_component = ftxui::Renderer([this](){
 
-					return ftxui::hbox(text)
-					| ftxui::size(ftxui::WIDTH, ftxui::EQUAL, 100)
-					| ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, 100);
+					ftxui::Elements children = {};
 
+					for(auto p : this->current.pieces){
+					children.push_back( ftxui::text(std::format("({}, {})", p.first, p.second)) 
+							| ftxui::size(ftxui::WIDTH, ftxui::EQUAL, 50)
+							| ftxui::size(ftxui::HEIGHT, ftxui::EQUAL, 50)
+							| ftxui::border
+							| ftxui::border );
+					}
+
+					return ftxui::vbox(children);
 					});
 
-
 			ftxui::Component held_piece = 
-					this->get_component_for_piece(this->held, {dim_w/5, dim_h/5});
+				this->get_component_for_piece(this->held, {dim_w/5, dim_h/5});
 
 			std::thread ticker( [&running, &screen](){
 
@@ -154,20 +167,47 @@ class Engine{
 			ftxui::Components all_components = {
 				held_piece,
 				drw_brd_component,
-				test
 			};
 
 			ftxui::Component root = ftxui::Container::Horizontal(all_components) |
-				ftxui::CatchEvent([&counter](ftxui::Event e){
-						if(e == ftxui::Event::Custom){ ++counter; return true; }
+				ftxui::CatchEvent([this](ftxui::Event e){
+						if(e == ftxui::Event::Custom){
+						/*
+							 move the piece to the top left
+							 rotate
+							 move back inside the board if needs be
+							 move back to the original place
+							 apply movement2apply
+							 */
+
+						Vector2D delta_top_left = {INT_MAX, INT_MAX};
+
+						//get the delta
+						for(Vector2D block : this->current.pieces){
+						delta_top_left = { std::min( block.first, delta_top_left.first ),
+						std::min( block.second, delta_top_left.second )
+						};
+						}
+
+						//apply delta to move the piece to the top left
+						//apply transformation
+						//move back to the original location
+						//apply the movement
+						for(Vector2D& block : this->current.pieces){
+							block = block - delta_top_left;
+							block = apply_transformation( block, this->rotation2apply );
+							block = block + delta_top_left + movement2apply;
+						}
+
+						}
 						return false;
-						});
+				});
 
 			screen.Loop( root );
 
 			running = false;
 			if(ticker.joinable()){ ticker.join(); }
+
 		}
 
-		void move_piece(MOVEMENT m){}
 };

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <print>
-
 #include <utility>
 
 typedef std::pair<int, int> Vector2D;//an actual vector, not a dynamic array
@@ -43,9 +41,12 @@ std::pair<int,int> operator*(std::pair<int,int> v, int x){
 
 }
 
-std::pair<int,int> operator+(std::pair<int, int> v1, std::pair<int, int> v2){
-
+Vector2D constexpr operator+(std::pair<int, int> v1, std::pair<int, int> v2){
 	return{ v1.first + v2.first, v1.second + v2.second };
+}
+
+Vector2D constexpr operator-(std::pair<int, int> v1, std::pair<int, int> v2){
+	return{ v1.first - v2.first, v1.second - v2.second };
 }
 
 Vector2D constexpr apply_transformation(Vector2D v, Matrix2D transformation){
