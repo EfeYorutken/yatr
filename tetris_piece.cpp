@@ -14,7 +14,7 @@ class Piece{
 
 			std::transform(this->pieces.begin(), this->pieces.end(), rotated_pieces.begin(),
 					[&mat](Vector2D p){
-					return apply_transformation( p, mat  );
+					return p * mat;
 					});
 
 			this->pieces = rotated_pieces;
