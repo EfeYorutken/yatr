@@ -1,6 +1,6 @@
 CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/16/chrono \
- /usr/include/c++/16/bits/version.h \
+ /usr/include/stdc-predef.h /home/efe/home/projects/yatr/game_engine.cpp \
+ /usr/include/c++/16/algorithm /usr/include/c++/16/bits/stl_algobase.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -8,40 +8,18 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/16/pstl/pstl_config.h /usr/include/c++/16/bits/chrono.h \
- /usr/include/c++/16/ratio /usr/include/c++/16/type_traits \
- /usr/include/c++/16/cstdint \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
- /usr/include/bits/types.h /usr/include/bits/typesizes.h \
- /usr/include/bits/time64.h /usr/include/bits/wchar.h \
- /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h /usr/include/c++/16/limits \
- /usr/include/c++/16/ctime /usr/include/time.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \
- /usr/include/bits/time.h /usr/include/bits/timex.h \
- /usr/include/bits/types/struct_timeval.h \
- /usr/include/bits/types/clock_t.h /usr/include/bits/types/time_t.h \
- /usr/include/bits/types/struct_tm.h \
- /usr/include/bits/types/struct_timespec.h /usr/include/bits/endian.h \
- /usr/include/bits/endianness.h /usr/include/bits/types/clockid_t.h \
- /usr/include/bits/types/timer_t.h \
- /usr/include/bits/types/struct_itimerspec.h \
- /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /usr/include/c++/16/bits/parse_numbers.h \
- /usr/include/c++/16/ext/numeric_traits.h \
+ /usr/include/c++/16/pstl/pstl_config.h \
  /usr/include/c++/16/bits/cpp_type_traits.h \
- /usr/include/c++/16/ext/type_traits.h /usr/include/c++/16/concepts \
- /usr/include/c++/16/compare /usr/include/c++/16/bits/stl_algo.h \
- /usr/include/c++/16/bits/algorithmfwd.h \
+ /usr/include/c++/16/bits/version.h /usr/include/c++/16/type_traits \
+ /usr/include/c++/16/ext/type_traits.h \
+ /usr/include/c++/16/ext/numeric_traits.h \
  /usr/include/c++/16/bits/stl_pair.h /usr/include/c++/16/bits/move.h \
- /usr/include/c++/16/bits/utility.h \
+ /usr/include/c++/16/bits/utility.h /usr/include/c++/16/compare \
+ /usr/include/c++/16/concepts \
  /usr/include/c++/16/bits/stl_iterator_base_types.h \
  /usr/include/c++/16/bits/iterator_concepts.h \
  /usr/include/c++/16/bits/ptr_traits.h \
  /usr/include/c++/16/bits/ranges_cmp.h \
- /usr/include/c++/16/initializer_list \
- /usr/include/c++/16/bits/stl_algobase.h \
  /usr/include/c++/16/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/16/bits/concept_check.h \
  /usr/include/c++/16/debug/assertions.h \
@@ -54,22 +32,58 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/predefined_ops.h \
  /usr/include/c++/16/bits/stl_function.h \
  /usr/include/c++/16/backward/binders.h /usr/include/c++/16/bit \
- /usr/include/c++/16/bits/stl_heap.h \
+ /usr/include/c++/16/bits/stl_algo.h \
+ /usr/include/c++/16/bits/algorithmfwd.h \
+ /usr/include/c++/16/initializer_list /usr/include/c++/16/bits/stl_heap.h \
  /usr/include/c++/16/bits/uniform_int_dist.h \
  /usr/include/c++/16/bits/stl_tempbuf.h /usr/include/c++/16/cstdlib \
- /usr/include/stdlib.h /usr/include/bits/waitflags.h \
- /usr/include/bits/waitstatus.h /usr/include/bits/floatn.h \
- /usr/include/bits/floatn-common.h /usr/include/sys/types.h \
- /usr/include/endian.h /usr/include/bits/byteswap.h \
- /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
- /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
- /usr/include/bits/types/__sigset_t.h /usr/include/bits/pthreadtypes.h \
- /usr/include/bits/thread-shared-types.h \
+ /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
+ /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/endianness.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
  /usr/include/bits/pthreadtypes-arch.h \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h /usr/include/c++/16/bits/std_abs.h \
- /usr/include/c++/16/bits/range_access.h /usr/include/c++/16/sstream \
+ /usr/include/c++/16/bits/ranges_algo.h /usr/include/c++/16/optional \
+ /usr/include/c++/16/exception /usr/include/c++/16/bits/exception_ptr.h \
+ /usr/include/c++/16/bits/cxxabi_init_exception.h \
+ /usr/include/c++/16/typeinfo /usr/include/c++/16/bits/hash_bytes.h \
+ /usr/include/c++/16/bits/nested_exception.h \
+ /usr/include/c++/16/bits/enable_special_members.h \
+ /usr/include/c++/16/bits/functional_hash.h \
+ /usr/include/c++/16/bits/invoke.h \
+ /usr/include/c++/16/bits/ranges_algobase.h \
+ /usr/include/c++/16/bits/ranges_base.h \
+ /usr/include/c++/16/bits/max_size_type.h /usr/include/c++/16/numbers \
+ /usr/include/c++/16/limits /usr/include/c++/16/bits/ranges_util.h \
+ /usr/include/c++/16/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/16/pstl/execution_defs.h /usr/include/c++/16/array \
+ /usr/include/c++/16/bits/stdexcept_throw.h \
+ /usr/include/c++/16/bits/stdexcept_throwfwd.h \
+ /usr/include/c++/16/bits/range_access.h /usr/include/c++/16/chrono \
+ /usr/include/c++/16/bits/chrono.h /usr/include/c++/16/ratio \
+ /usr/include/c++/16/cstdint \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
+ /usr/include/c++/16/ctime /usr/include/time.h /usr/include/bits/time.h \
+ /usr/include/bits/timex.h /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h \
+ /usr/include/c++/16/bits/parse_numbers.h /usr/include/c++/16/sstream \
  /usr/include/c++/16/bits/requires_hosted.h /usr/include/c++/16/istream \
  /usr/include/c++/16/ios /usr/include/c++/16/iosfwd \
  /usr/include/c++/16/bits/stringfwd.h \
@@ -78,12 +92,7 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \
  /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/c++/16/exception \
- /usr/include/c++/16/bits/exception_ptr.h \
- /usr/include/c++/16/bits/cxxabi_init_exception.h \
- /usr/include/c++/16/typeinfo /usr/include/c++/16/bits/hash_bytes.h \
- /usr/include/c++/16/bits/nested_exception.h \
- /usr/include/c++/16/bits/char_traits.h \
+ /usr/include/bits/types/FILE.h /usr/include/c++/16/bits/char_traits.h \
  /usr/include/c++/16/bits/localefwd.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h \
  /usr/include/c++/16/clocale /usr/include/locale.h \
@@ -113,18 +122,11 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/new_throw.h \
  /usr/include/c++/16/bits/ostream_insert.h \
  /usr/include/c++/16/bits/cxxabi_forced.h \
- /usr/include/c++/16/bits/stdexcept_throw.h \
- /usr/include/c++/16/bits/stdexcept_throwfwd.h \
  /usr/include/c++/16/bits/erase_if.h \
  /usr/include/c++/16/bits/basic_string.h \
  /usr/include/c++/16/ext/alloc_traits.h \
  /usr/include/c++/16/bits/alloc_traits.h /usr/include/c++/16/string_view \
- /usr/include/c++/16/bits/functional_hash.h \
- /usr/include/c++/16/bits/ranges_base.h \
- /usr/include/c++/16/bits/max_size_type.h /usr/include/c++/16/numbers \
  /usr/include/c++/16/bits/string_view.tcc \
- /usr/include/c++/16/bits/ranges_algobase.h \
- /usr/include/c++/16/bits/invoke.h /usr/include/c++/16/bits/ranges_util.h \
  /usr/include/c++/16/ext/string_conversions.h /usr/include/c++/16/cstdio \
  /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
  /usr/include/bits/types/__fpos64_t.h \
@@ -154,16 +156,14 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/locale_facets.tcc \
  /usr/include/c++/16/bits/basic_ios.tcc /usr/include/c++/16/ostream \
  /usr/include/c++/16/bits/ostream.h /usr/include/c++/16/format \
- /usr/include/c++/16/array /usr/include/c++/16/charconv \
- /usr/include/c++/16/locale \
+ /usr/include/c++/16/charconv /usr/include/c++/16/locale \
  /usr/include/c++/16/bits/locale_facets_nonio.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/16/bits/codecvt.h \
  /usr/include/c++/16/bits/locale_facets_nonio.tcc \
- /usr/include/c++/16/bits/locale_conv.h /usr/include/c++/16/optional \
- /usr/include/c++/16/bits/enable_special_members.h \
- /usr/include/c++/16/span /usr/include/c++/16/bits/monostate.h \
+ /usr/include/c++/16/bits/locale_conv.h /usr/include/c++/16/span \
+ /usr/include/c++/16/bits/monostate.h \
  /usr/include/c++/16/bits/formatfwd.h /usr/include/c++/16/bits/unicode.h \
  /usr/include/c++/16/bits/unicode-data.h \
  /usr/include/c++/16/bits/ostream_print.h \
@@ -180,76 +180,72 @@ CMakeFiles/yatr.dir/main.cpp.o: /home/efe/home/projects/yatr/main.cpp \
  /usr/include/c++/16/bits/refwrap.h /usr/include/c++/16/bits/unique_ptr.h \
  /usr/include/c++/16/ext/aligned_buffer.h \
  /usr/include/c++/16/ext/concurrence.h /usr/include/c++/16/bits/align.h \
- /usr/include/c++/16/bits/chrono_io.h \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/app.hpp \
- /usr/include/c++/16/atomic /usr/include/c++/16/bits/atomic_base.h \
+ /usr/include/c++/16/bits/chrono_io.h /usr/include/c++/16/climits \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/c++/16/thread \
+ /usr/include/c++/16/stop_token /usr/include/c++/16/atomic \
+ /usr/include/c++/16/bits/atomic_base.h \
  /usr/include/c++/16/bits/atomic_lockfree_defines.h \
- /usr/include/c++/16/bits/atomic_wait.h /usr/include/c++/16/functional \
- /usr/include/c++/16/bits/std_function.h \
+ /usr/include/c++/16/bits/atomic_wait.h \
+ /usr/include/c++/16/bits/std_thread.h /usr/include/c++/16/semaphore \
+ /usr/include/c++/16/bits/semaphore_base.h \
+ /usr/include/c++/16/bits/atomic_timed_wait.h \
+ /usr/include/c++/16/bits/this_thread_sleep.h /usr/include/sys/time.h \
+ /home/efe/home/projects/yatr/utils.cpp /usr/include/c++/16/utility \
+ /usr/include/c++/16/bits/stl_relops.h /usr/include/c++/16/bits/intcmp.h \
+ /home/efe/home/projects/yatr/tetris_piece.cpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
+ /usr/include/c++/16/functional /usr/include/c++/16/bits/std_function.h \
  /usr/include/c++/16/unordered_map \
  /usr/include/c++/16/bits/unordered_map.h \
  /usr/include/c++/16/bits/hashtable.h \
  /usr/include/c++/16/bits/hashtable_policy.h \
  /usr/include/c++/16/bits/node_handle.h \
  /usr/include/c++/16/bits/binders.h /usr/include/c++/16/bits/funcwrap.h \
- /usr/include/c++/16/bits/mofunc_impl.h /usr/include/c++/16/memory \
+ /usr/include/c++/16/bits/mofunc_impl.h \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/color.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/export.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/surface.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/box.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/cell.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/elements.hpp \
+ /usr/include/c++/16/memory \
  /usr/include/c++/16/bits/stl_raw_storage_iter.h \
  /usr/include/c++/16/bits/shared_ptr_atomic.h \
  /usr/include/c++/16/backward/auto_ptr.h \
  /usr/include/c++/16/bits/ranges_uninitialized.h \
  /usr/include/c++/16/bits/out_ptr.h \
  /usr/include/c++/16/pstl/glue_memory_defs.h \
- /usr/include/c++/16/pstl/execution_defs.h \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/animation.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/export.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/captured_mouse.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/task.hpp \
- /usr/include/c++/16/variant \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/event.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/mouse.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/screen.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/surface.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/box.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/cell.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/color.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/terminal.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/deprecated.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/node.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/requirement.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/selection.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/elements.hpp \
- /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/direction.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/flexbox_config.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/linear_gradient.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/node.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/requirement.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/screen.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/terminal.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/selection.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/ref.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/screen/string.hpp \
+ /usr/include/c++/16/variant \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/take_any_args.hpp \
  /usr/include/c++/16/deque /usr/include/c++/16/bits/stl_deque.h \
  /usr/include/c++/16/bits/deque.tcc /usr/include/c++/16/queue \
  /usr/include/c++/16/bits/stl_queue.h /usr/include/c++/16/ranges \
  /usr/include/c++/16/iterator /usr/include/c++/16/bits/stream_iterator.h \
- /usr/include/c++/16/utility /usr/include/c++/16/bits/stl_relops.h \
- /usr/include/c++/16/bits/intcmp.h /usr/include/c++/16/bits/elements_of.h \
- /usr/include/c++/16/stack /usr/include/c++/16/bits/stl_stack.h \
- /usr/include/c++/16/print /usr/include/c++/16/bits/print.h \
- /usr/include/c++/16/thread /usr/include/c++/16/stop_token \
- /usr/include/c++/16/bits/std_thread.h /usr/include/c++/16/semaphore \
- /usr/include/c++/16/bits/semaphore_base.h \
- /usr/include/c++/16/bits/atomic_timed_wait.h \
- /usr/include/c++/16/bits/this_thread_sleep.h /usr/include/sys/time.h \
- /home/efe/home/projects/yatr/game_engine.cpp \
- /usr/include/c++/16/algorithm /usr/include/c++/16/bits/ranges_algo.h \
- /usr/include/c++/16/pstl/glue_algorithm_defs.h \
- /usr/include/c++/16/climits \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /home/efe/home/projects/yatr/utils.cpp \
- /home/efe/home/projects/yatr/tetris_piece.cpp \
+ /usr/include/c++/16/bits/elements_of.h /usr/include/c++/16/stack \
+ /usr/include/c++/16/bits/stl_stack.h \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/dom/deprecated.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/screen_interactive.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/app.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/animation.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/captured_mouse.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/task.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/event.hpp \
+ /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/mouse.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/component.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
  /home/efe/home/projects/yatr/_deps/ftxui-src/include/ftxui/component/component_base.hpp \

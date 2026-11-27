@@ -1,5 +1,6 @@
 #include "utils.cpp"
 
+#include <climits>
 #include <vector>
 #include <cstdlib>
 #include <ctime>
@@ -12,9 +13,22 @@ class Piece{
 		void rotate_with(Matrix2D mat){
 			decltype(this->pieces) rotated_pieces = this->pieces;
 
+			Vector2D delta_origin = {INT_MAX, INT_MAX};
+
+			for( Vector2D block : this->pieces ){
+				delta_origin = {
+					std::min(delta_origin.first, block.first),
+					std::min(delta_origin.second, block.second),
+				};
+			}
+
 			std::transform(this->pieces.begin(), this->pieces.end(), rotated_pieces.begin(),
-					[&mat](Vector2D p){
-					return p * mat;
+					[&mat, &delta_origin](Vector2D p){
+
+					p = p - delta_origin;
+					p = p * mat;
+
+					return p + delta_origin;
 					});
 
 			this->pieces = rotated_pieces;
@@ -45,6 +59,28 @@ class Piece{
 
 		void rotate_ccw(){ this->rotate_with(COUNTER_CLOCK_WISE_ROTATION ); }
 		void rotate_cw(){ this->rotate_with(CLOCK_WISE_ROTATION); }
+
+		void move_left1(){
+
+			std::transform(this->pieces.begin(), this->pieces.end(), this->pieces.begin(),
+					[](Vector2D block)->Vector2D{
+					return { block.first - 1, block.second };
+					}); 
+		}
+
+		void move_right1(){
+			std::transform(this->pieces.begin(), this->pieces.end(), this->pieces.begin(),
+					[](Vector2D block)->Vector2D{
+					return { block.first + 1, block.second };
+					}); 
+		}
+
+		void move_down1(){
+			std::transform(this->pieces.begin(), this->pieces.end(), this->pieces.begin(),
+					[](Vector2D block)->Vector2D{
+					return { block.first, block.second + 1};
+					});
+		}
 
 };
 
